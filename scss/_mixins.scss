@@ -1,0 +1,18 @@
+//Fuctions & Mixins
+@function weight($weight-name){
+    @return map-get($font-weights, $weight-name);
+  }
+  
+  @mixin title-header($fontSize) {
+    font-family: $primary-font;
+    font-weight: weight(overpass-semi-bold);
+    font-size: $fontSize;
+  }
+  
+  @mixin contentparagraph(){
+    font-family: $secondary-font;
+    font-weight: weight(ubuntu-regular);
+    padding-top: 8%;
+    font-size: 16px;
+    line-height: 2;
+  }
