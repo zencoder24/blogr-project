@@ -1,0 +1,14 @@
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    #hero-logo{
+      height: 34px;
+    }
+  
+    #hamburger-icon{
+      height: 22px;
+      width: 35px;
+    }
+  }

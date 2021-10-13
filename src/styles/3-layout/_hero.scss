@@ -1,0 +1,65 @@
+//Hero Content
+#hero{
+    background-image:url('../images/bg-pattern-intro.svg'), 
+                    linear-gradient(to bottom right,$gradient-very-light-red, $gradient-light-red);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 34% 33%,right;
+    background-size: 358%, cover;
+    width:100%;
+    margin:0;
+    padding: 56px 20px;
+    height: 85vh;
+    border-radius: 0 0 0 22%;
+  
+    
+    #header-group{
+      color: $neutral-white;
+      text-align: center;
+      padding-top: 35%;
+    
+      #hero-title{
+        @include title-header(37px);
+        color: $neutral-white;
+      }
+  
+      .secondary-info{
+        font-family: $primary-font;
+        color: $neutral-white;
+      }
+    
+      #hero-subtitle{
+        padding-top: 5%;
+        font-weight: weight(overpass-light);
+        font-size: 20px;
+      }
+    }
+  
+    .button-group{
+      text-align: center;
+      padding-top: 15%;
+    
+      a.button{
+        display:inline-block;
+        font-family: $secondary-font;
+        font-weight: weight(ubuntu-medium);
+        font-size: 18px;
+        padding: 13px 18px;
+        border: 0.1em solid $neutral-white;
+        margin:0 0.3em 0.3em 0;
+        border-radius:24px;
+        box-sizing: border-box;
+        text-decoration:none;
+        color:$neutral-white;
+        text-align:center;
+      }
+    
+      #start-btn{
+        background-color: $neutral-white;
+        color: $primary-very-light-red;
+      }
+    
+    }
+  
+    
+  }
+  

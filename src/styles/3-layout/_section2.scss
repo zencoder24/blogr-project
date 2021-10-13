@@ -1,0 +1,46 @@
+//Section 2 Content//
+@include mobile{
+  #phone-illustration{
+    position: absolute;
+    height: 400px;
+    margin-top: 65px;
+    margin-left: -5px;
+  }
+}
+
+@include mobileL {
+  #phone-illustration{
+    position: absolute;
+    height: 430px;
+    margin-left: 8px;
+    margin-top: 92px;
+  }
+}
+
+
+
+  #section2{
+    margin-top: 67%;
+    text-align: center;
+    background-image: url('/images/bg-pattern-circles.svg'),linear-gradient(to bottom right,$gradient-very-dark-gray-blue, $gradient-very-dark-desaturated-blue);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% -238px,right;
+    background-size: 160%, cover;                
+    border-radius: 0 85px 0 85px;
+    .section2-desc{
+      padding: 60% 0 20% 0; 
+      color: $neutral-white;
+    }
+    #section2-header{
+      @include title-header(37px);
+      color: $neutral-white;
+  
+      + p{
+        @include contentparagraph();
+        color: $neutral-white;
+        line-height: 1.75;
+        padding: 8% 10% 0 10%
+      }
+    }
+  
+  }

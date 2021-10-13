@@ -1,0 +1,37 @@
+//Section 1 Content//
+@include mobile{
+  #section1{
+    .section1-image{
+      //TODO: May have to fix....
+      @include margin(15% auto null -5%);
+    }
+}
+}
+
+@include mobileL{
+  #section1{
+    .section1-image{
+      @include margin(15% auto null 0%);
+    }
+  }
+}
+
+
+
+
+
+
+//Section 3
+@include mobile{
+  #section3{
+    #section3-image{
+      @include margin(3% auto null -17%);
+    }
+  }
+}
+
+@include mobileL{
+  #section3-image{
+    @include margin(3% auto null -9%);
+  }
+}
