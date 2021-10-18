@@ -1,14 +1,100 @@
-.navigation{
+@include mobile{
+  .navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+    #brand-logo{
+      height: 34px;
+    }
+
+  .navigation-links{
+    display: none;
+  }
+
+    #toggle-icon{
+      height: 18px;
+      width: 26px;
+    }
+  }
+}
+
+//Do I need this???/
+@include mobileL{
+  .navigation{
     display: flex;
     justify-content: space-between;
     align-items: center;
   
-    #hero-logo{
-      height: 34px;
+      #brand-logo{
+        height: 34px;
+      }
+
+      .navigation-links{
+        display: none;
+      } 
+
+      #toggle-icon{
+        height: 22px;
+        width: 35px;
+      }
     }
-  
-    #hamburger-icon{
-      height: 22px;
-      width: 35px;
+
+}
+
+@include tablet{
+  @include baseNavStyle();
+  .navigation{
+      #brand-logo{
+        height: 32px;
+      }
+      .navigation-links{
+        .nav-left{
+          gap: 24px;
+          padding-left: 3%;
+
+          a{
+            font-size: 1.2rem;
+          }
+        }
+        .nav-right{
+          #login-link{
+            padding: 0 16px;
+            font-size: 1.2rem;
+          }
+          #signup-btn{
+            font-size: 1.2rem;
+          }
+        }
+      } 
+    }
+}
+
+@include laptop{
+  .navigation{
+    padding: 0 3%;
+    #brand-logo{
+      height: 3.4rem;
     }
   }
+}
+
+@include desktop{
+  
+  .navigation{
+    padding: 0 9% !important;
+
+    #brand-logo{
+      height: 4.2rem !important;
+    }
+   
+    .navigation-links{
+      .nav-left{
+        a{
+          font-size: 1.4rem;
+        }
+      }
+
+    }
+  }
+}

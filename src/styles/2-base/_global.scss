@@ -1,4 +1,7 @@
 //Global Styles
+html{
+  font-size: 62.5%;
+}
 
 h1, h2{
     color: $primary-very-dark-blue;
@@ -7,6 +10,11 @@ h1, h2{
 ul{
     list-style: none;
 }
+
+a{
+  text-decoration: none;
+}
+
 
 
 .section{
@@ -25,7 +33,7 @@ ul{
     font-weight: weight(ubuntu-regular);
     padding-top: 8%;
     padding: 8% 2% 0 2%;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 2;
     color: $neutral-very-dark-grayish-blue;
   }
