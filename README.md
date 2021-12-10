@@ -28,13 +28,13 @@ Users should be able to:
 
 ### Screenshot
 
-![](./mobile-menu.png)
-![](./desktop.png)
+![](screenshots/mobile-menu.png)
+![](screenshots/desktop.png)
 
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://blogr-project.vercel.app/)
 
 ## My process
 
