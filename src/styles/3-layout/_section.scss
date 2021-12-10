@@ -1,17 +1,157 @@
-//Section 1 Content//
+
+//Base Styles that will both apply to Section 1 and 3
+//Mobile
+@include mobile{
+  section{
+    margin-top: 30%;
+    text-align: center;
+  }
+  .section-header, .sub-header{
+    @include title-header(2.8rem);
+    text-align: center;
+   }
+  .section-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .section-mobile-image{
+    display: block;
+  }
+
+  .section-desktop-image{
+    display: none;
+  }
+
+  .section-desc{
+    padding: 8%;
+  }
+
+  .sub-header + p {
+    @include contentparagraph();
+    font-size: 1.6rem;
+    line-height: 2;
+    padding: 8% 2% 0 2%;
+  }
+}
+
+//Tablet
+@include tablet{
+  .section-container{
+    display: flex;
+  }
+
+  .section-mobile-image{
+    display: none;
+  }
+
+  .section-desktop-image{
+    display: block
+  }
+
+  .section-header{
+    font-size: 23px;
+  }
+
+ 
+
+  .section-desc:nth-child(2){
+    padding-top: 10%;
+  }
+
+  .sub-header{
+    text-align: left;
+    font-size: 1.6rem;
+  }
+
+  .sub-header + p{
+    text-align: left;
+    font-size: 1rem !important;
+    padding: 4% 0% 0 0%;
+  }
+
+
+}
+
+//Laptop 
+@include laptop{
+  .section-header{
+    font-size: 2.6rem;
+  }
+  .sub-header{
+    font-size: 2.2rem;
+  }
+
+  .sub-header + p{
+    font-size: 1.4rem !important;
+  }
+}
+
+//Desktop
+@include desktop{
+  .section-header{
+    font-size: 3.5rem;
+  }
+  .sub-header{
+    font-size: 3rem;
+
+    p{
+      font-size: 1.5rem;
+    }
+  }
+}
+
+
+
+//Styles that will only to Section 1
+
+//Mobile
 @include mobile{
   #section1{
-    .section1-image{
-      //TODO: May have to fix....
-      @include margin(15% auto null -5%);
+    #section1-mobile{
+      max-width:100%; 
+      max-height:100%; 
+      margin: 12% auto; 
     }
 }
 }
 
-@include mobileL{
+//Tablet
+@include tablet {
   #section1{
-    .section1-image{
-      @include margin(15% auto null 0%);
+    margin-top: 9%;
+  }
+
+  #section1-container{
+    flex-direction: row-reverse;
+    
+    #section1-desktop{
+      height: 450px;
+      margin-right: -17%;
+    }
+    .section-desc{
+      padding: 20% 8% 0% 15%;
+    }
+  }
+
+}
+
+//Laptop
+@include laptop{
+  #section1-container{
+    gap: 10px;
+
+    #section1-desktop{
+      height: 577px;
+    }
+  }
+}
+
+//Desktop
+@include desktop{
+   #section1-container{
+    gap: 10px;
+    #section1-desktop{
+      height: 750px;
     }
   }
 }
@@ -20,18 +160,50 @@
 
 
 
+//Styles that will only apply to Section 3
 
-//Section 3
+//Mobile
 @include mobile{
+    #section3-mobile{
+      max-width:100%; 
+      max-height:100%; 
+      margin:auto; 
+    }
+}
+
+
+//Tablet
+@include tablet{
   #section3{
-    #section3-image{
-      @include margin(3% auto null -17%);
+    margin-top: 11%;
+  }
+  #section3-container{
+    flex-direction: row;
+
+    #section3-desktop{
+      height: 450px;
+      margin-left: -21%;
+    }
+
+    .section-desc{
+      padding: 13% 15% 8% 0%;
     }
   }
 }
 
-@include mobileL{
-  #section3-image{
-    @include margin(3% auto null -9%);
+@include laptop{
+  #section3-container{
+    gap: 100px;
+    #section3-desktop{
+      height: 534px;
+    }
+  }
+}
+
+@include desktop{
+  #section3-container{
+    #section3-desktop{
+      height: 750px ;
+    }
   }
 }

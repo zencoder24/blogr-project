@@ -9,23 +9,23 @@
   @mixin contentparagraph(){
     font-family: $secondary-font;
     font-weight: weight(ubuntu-regular);
-    padding-top: 8%;
-    font-size: 16px;
+    color: $neutral-very-dark-grayish-blue;
   }
 
   @mixin button ($color, $background-color, $padding-topBtm, $padding-leftRight) {
     display:inline-block;
-        font-family: $secondary-font;
-        font-weight: weight(ubuntu-medium);
-        padding: $padding-topBtm $padding-leftRight;
-        border: 0.1em solid $neutral-white;
-        margin:0 0.3em 0.3em 0;
-        border-radius:24px;
-        box-sizing: border-box;
-        text-decoration:none;
-        color:$color;
-        background-color: $background-color;
-        text-align:center;
+    font-family: $secondary-font;
+    font-weight: weight(ubuntu-medium);
+    padding: $padding-topBtm $padding-leftRight;
+    border: 0.1em solid $neutral-white;
+    margin:0 0.3em 0.3em 0;
+    border-radius:24px;
+    box-sizing: border-box;
+    text-decoration:none;
+    color:$color;
+    cursor: pointer;
+    background-color: $background-color;
+    text-align:center;
   }
 
   
@@ -33,23 +33,32 @@
 // no matter the viewport width. 
   @mixin baseNavStyle(){
     .navigation{
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      .navbar-shown{
+        width: 100%;
+      }
       .navigation-links{
         display: flex;
-        flex-direction: row;
+        // flex-direction: row;
+        background: none;
         justify-content: space-between;
         align-items: center;
-        width: 85%;
+        width: 100%;
           .nav-left{
             display: flex;
             flex-direction: row;
-            a{
-              color: $neutral-white;
-              font-family: $primary-font;
+            .nav-item{
+                color: $neutral-white;
+                font-family: $primary-font;
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                margin: 0;
             }
+            
           }
           .nav-right{
             #login-link{
@@ -63,7 +72,7 @@
           }
         }
       }
-      #toggle-icon{
+      .toggle-button{
         display: none;
       }
 }
@@ -120,7 +129,8 @@
 
 
 
-  //Media Queries 
+  //Media Queries - No Max
+  //These queries doesn't have to a max-width because I would hate to rewrite the exact same code code for each query. 
   @mixin mobile {
     @media (min-width: #{$breakpoint-mobile} ){
       @content;
@@ -132,7 +142,7 @@
       @content;
     }
   }
-  //This query doesn't have to a max-width because I would hate to rewrite the exact same code code for each query. 
+
   @mixin tablet {
     @media (min-width: #{$breakpoint-tablet} ){
       @content;
@@ -147,6 +157,15 @@
 
   @mixin desktop {
     @media (min-width: #{$breakpoint-desktop}) {
+      @content;
+    }
+  }
+
+  //Media Query with Max
+  //This query has a max value for becauase I only want these certain styles to apply to a certain media query constraint
+
+  @mixin mobileOnly {
+    @media (max-width: 767px) {
       @content;
     }
   }

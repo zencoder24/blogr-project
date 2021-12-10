@@ -1,46 +1,116 @@
 //Section 2 Content//
+
+//Section 2 styles that will apply no matter the media query
+#section2{
+  display: flex;
+ 
+  text-align: center;
+  background-image: url('../../../build/images/bg-pattern-circles.svg'),linear-gradient(to bottom right,$gradient-very-dark-gray-blue, $gradient-very-dark-desaturated-blue);
+  background-repeat: no-repeat, no-repeat;            
+  border-radius: 0 85px 0 85px;
+  .section2-desc{
+    color: $neutral-white;
+  }
+  #section2-header{
+   
+    color: $neutral-white;
+    + p{
+      @include contentparagraph();
+      color: $neutral-white;
+      line-height: 1.75;
+    }
+  }
+
+}
+
+
+
+
+//Section 2 Mobile Media Query
 @include mobile{
-  #phone-illustration{
-    position: absolute;
-    height: 400px;
-    margin-top: 65px;
-    margin-left: -5px;
-  }
-}
-
-@include mobileL {
-  #phone-illustration{
-    position: absolute;
-    height: 430px;
-    margin-left: 8px;
-    margin-top: 92px;
-  }
-}
-
-
-
   #section2{
     margin-top: 67%;
-    text-align: center;
-    background-image: url('/images/bg-pattern-circles.svg'),linear-gradient(to bottom right,$gradient-very-dark-gray-blue, $gradient-very-dark-desaturated-blue);
-    background-repeat: no-repeat, no-repeat;
+    flex-direction: column;
     background-position: 50% -238px,right;
-    background-size: 160%, cover;                
-    border-radius: 0 85px 0 85px;
-    .section2-desc{
-      padding: 60% 0 20% 0; 
-      color: $neutral-white;
+    background-size: 160%, cover; 
+
+    #phone-illustration{
+      margin-top: -48%;
+      object-fit: scale-down;
     }
+
     #section2-header{
-      @include title-header(37px);
-      color: $neutral-white;
+      @include title-header(3.7rem);
   
       + p{
-        @include contentparagraph();
-        color: $neutral-white;
-        line-height: 1.75;
-        padding: 8% 10% 0 10%
+        padding: 8% 10% 30% 10%;
       }
     }
-  
   }
+  
+
+ 
+}
+
+
+//Section 2 Tablet Media Query
+@include tablet{
+  #section2{
+    margin-top: 14%;
+    gap: 0;
+    flex-direction: row;
+    background-position: -30% -238px,right;
+    background-size: 70%, cover; 
+
+    #phone-illustration{
+      @include margin(-5% null -26% 8%);
+      height: 350px;
+      object-fit: contain;
+    }
+
+    .section2-desc{
+      padding: 10% 7%;
+    }
+
+    #section2-header{
+       @include title-header(1.7rem);
+
+       + p{
+         padding: 0;
+       }
+    }
+  }
+}
+
+
+//Section 2 Laptop Media Query
+@include laptop{
+  #section2{
+    background-position:-30% -468px,right;
+    #phone-illustration{
+      margin-top: -4%;
+      height: 405px;
+    }
+    #section2-header{
+      font-size: 2.7rem !important;
+    }
+  }
+}
+
+//Section 2 Desktop Media Query
+@include desktop{
+  #section2{
+    
+    #phone-illustration{
+      height: 515px;
+    }
+    #section2-header{
+      font-size: 3rem !important;
+    }
+  }
+}
+
+
+
+
+

@@ -15,36 +15,11 @@ a{
   text-decoration: none;
 }
 
+li a:hover{
+  text-decoration: underline;
+}
 
 
-.section{
-    margin-top: 30%;
-    text-align: center;
-  }
-  
-  //Section 1&3 Content
-  .section-header, .sub-header{
-   @include title-header(28px);
-   text-align: center;
-  }
-  
-  .sub-header + p{
-    font-family: $secondary-font;
-    font-weight: weight(ubuntu-regular);
-    padding-top: 8%;
-    padding: 8% 2% 0 2%;
-    font-size: 1.6rem;
-    line-height: 2;
-    color: $neutral-very-dark-grayish-blue;
-  }
 
-  .section-desc{
-    padding: 8%;
-    .sub-header + p {
-      @include contentparagraph();
-      line-height: 2;
-      padding: 8% 2% 0 2%;
-    }
-  }
-  
+
   

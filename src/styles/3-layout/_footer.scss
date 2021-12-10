@@ -1,40 +1,131 @@
 //Footer
 
+//Footer Base styles that will apply no matter the media query
 #footer-section{
-    background-color: $neutral-very-dark-black-blue;
-    text-align: center;
-    border-radius: 0 100px 0 0;
-    
-    #footer-content{
-      margin-top: 15%;
-      padding: 20% 0; 
-  
-      .link-group{
-        padding-top: 15%;
-        color: $neutral-grayish-blue;
-        font-family: $primary-font;
-        
-        h3{
-          font-size: 16px;
-        }
-  
-        ul{
-          padding-top: 5%;
-          li{
-            padding-top: 3%;
-  
-             a {
-              text-decoration: none;
-              color: $neutral-grayish-blue;
-              padding-top: 2%
-            }
+  background-color: $neutral-very-dark-black-blue;
+  margin-top: 15%;
+  #footer-content{
+    display: flex;
+    .link-group{
+      color: $neutral-grayish-blue;
+      font-family: $primary-font;
+      
+      ul{
+        padding-top: 5%;
+        li{
+          padding-top: 3%;
+
+           a {
+            text-decoration: none;
+            color: $neutral-grayish-blue;
+            padding-top: 2%
           }
-  
-          
+          a:hover{
+            text-decoration: underline;
+          }
         }
-        
+
         
       }
+      
+      
     }
-  
   }
+
+}
+
+
+//Footer Mobile 
+@include mobile{
+  #footer-section{
+    text-align: center;
+    border-radius: 0 100px 0 0;
+  }
+  #footer-content{
+    flex-direction: column;
+    padding: 20% 0; 
+   
+    #footer-logo{
+      object-fit: none;
+    }
+
+    .link-group{
+      padding-top: 15%;
+
+      h3{
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+
+//Footer Tablet 
+@include tablet{
+  #footer-section{
+    text-align: left;
+    border-radius: 0 55px 0 0;
+  }
+  #footer-content{
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 5% 2%; 
+
+    #footer-logo{
+      height: 25px;
+      object-fit: contain;
+    }
+    .link-group{
+      padding-top: 0;
+
+      h3{
+        font-size: 1rem;
+        margin-bottom: 20%;
+      }
+      a{
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@include laptop{
+  #footer-section{
+    #footer-content{
+      .link-group{
+        h3{
+          font-size: 1.2rem !important;
+        }
+        ul{
+          li{
+            padding-top: 12%;
+          }
+        }
+      }
+
+    }
+  }
+  
+}
+
+@include desktop{
+  #footer-section{
+    #footer-content{
+      .link-group{
+        ul{
+          li{
+            padding-top: 18%;
+            a{
+              font-size: 1.150rem !important;
+            }
+          }
+        }
+       
+      }
+
+    }
+  }
+}
+
+

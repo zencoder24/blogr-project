@@ -9,22 +9,57 @@
 </head>
 <body>
     <!--Hero Content-->
-    <section id="hero">
+    <header id="hero">
         
             <nav class="navigation">
                 <img id="brand-logo" src="/build/images/logo.svg" alt=" Brand Logo">
-                <div class="navigation-links">
-                    <ul class="nav-left">
-                        <li><a href="#">Product <img src="/build/images/icon-arrow-light.svg" alt="arrow"></a></li>
-                        <li><a href="#">Company <img src="/build/images/icon-arrow-light.svg" alt="arrow"></a></li>
-                        <li><a href="#">Connect <img src="/build/images/icon-arrow-light.svg" alt="arrow"></a></li>
-                    </ul>
-                    <div class="nav-right">
-                        <a href="#" id="login-link">Login</a>
-                        <a href="#" id="signup-btn">Sign Up</a>
+                <a href="#" class="toggle-button toggle-open"><img id="nav-modal-open" src="/build/images/icon-hamburger.svg" alt="Toggle"></a>
+                <div class="navbar-shown modal-bg">
+                    <a href="#" class="toggle-button toggle-close"><img id="nav-modal-close" src="/build/images/icon-close.svg" alt="Toggle"></a>
+                    <div class="navigation-links modal">
+                        <nav class="nav-left">
+                            <div class="product-link link">
+                                <input type="radio" name="link_accordion" id="product-section" class="menu_input">
+                                <label for="product-section" class="menu_label" >Product</label>
+                                <button class="nav-item">Product <img src="/build/images/icon-arrow-light.svg" alt="arrow"></button>
+                                <ul class="menu_content prod_link_space">
+                                    <li><a href="#">Overview</a></li>
+                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">Marketplace</a></li>
+                                    <li><a href="#">Features</a></li>
+                                    <li><a href="#">Integrations</a></li>
+                                </ul>
+                            </div>
+                            <div class="company-link link">
+                                <input type="radio" name="link_accordion" id="company-section" class="menu_input">
+                                <label for="company-section" class="menu_label" >Company</label>
+                                <button class="nav-item">Company <img src="/build/images/icon-arrow-light.svg" alt="arrow"></button>
+                                <ul class="menu_content comp_link_space">
+                                    <li><a href="#">About</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </div>
+                            <div class="connect-link link"> 
+                                <input type="radio" name="link_accordion" id="connect-section" class="menu_input">
+                                <label for="connect-section" class="menu_label" >Connect</label>
+                                <button class="nav-item">Connect <img src="/build/images/icon-arrow-light.svg" alt="arrow"></button>
+                                <ul class="menu_content conn_link_space">
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">Newsletter</a></li>
+                                    <li><a href="#">LinkedIn</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <hr class="menu-divider">
+                        <div class="nav-right">
+                            <a href="#" id="login-link">Login</a>
+                            <a href="#" id="signup-btn">Sign Up</a>
+                        </div>
                     </div>
                 </div>
-                <a href="#" class="toggle-button"><img id="toggle-icon" src="/build/images/icon-hamburger.svg" alt="Toggle"></a>
+                
             </nav>
             <div class="intro">
                 <div id="header-group">
@@ -37,12 +72,13 @@
                 </div>
             </div>
 
-    </section>
+        </header>
     <!--Section 1 Content-->
     <section class="section" id="section1">
         <h1 class="section-header">Designed for the future</h1>
-        <div class="section-container">
-            <img class="section1-image" src="/build/images/illustration-editor-mobile.svg" alt="Editor">
+        <div id="section1-container" class="section-container">
+            <img id="section1-mobile" class="section-mobile-image" src="/build/images/illustration-editor-mobile.svg" alt="Editor Image for Mobile">
+            <img id="section1-desktop" class="section-desktop-image" src="/build/images/illustration-editor-desktop.svg" alt="Editor Image for Desktop">
             <div class="desc-content">
                 <div class="section-desc">
                     <h2 class="sub-header">Introducing an extensible editor</h2>
@@ -61,8 +97,9 @@
     </section>
     
     <!--Section 2 Conent-->
-    <img id="phone-illustration" src="/build/images/illustration-phones.svg" alt="Phones Illustrations">
+   
     <section id="section2">
+        <img id="phone-illustration" src="/build/images/illustration-phones.svg" alt="Phones Illustrations">
         <div class="section2-desc">
             <h1 id="section2-header" class="sub-header">State of the Art Infrastructure</h1>
             <p>With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
@@ -72,8 +109,10 @@
     
     <!--Section 3 Content -->
     <section class="section" id="section3">
-        <div class="section-container">
-            <img id="section3-image" src="/build/images/illustration-laptop-mobile.svg" alt="Laptop">
+        <div id="section3-container" class="section-container">
+            <img id="section3-mobile" class="section-mobile-image" src="/build/images/illustration-laptop-mobile.svg" alt="Laptop Mobile Image">
+            <img id="section3-desktop" class="section-desktop-image" src="/build//images/illustration-laptop-desktop.svg" alt="Laptop Desktop Image">
+
             <div class="desc-content">
                 <div class="section-desc">
                     <h2 class="sub-header">Free, open, simple</h2>
@@ -93,7 +132,7 @@
     <!--Footer Content -->
     <footer id="footer-section">
         <div id="footer-content">
-            <img src="/build/images/logo.svg" alt="Blogr Logo">
+            <img id="footer-logo" src="/build/images/logo.svg" alt="Blogr Logo">
             <div class="link-group">
                 <h3>Product</h3>
                 <ul>
@@ -124,5 +163,6 @@
         </div>
     </footer>
 
+    <script src="../src/scripts/index.js"></script>
 </body>
 </html>

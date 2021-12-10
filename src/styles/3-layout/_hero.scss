@@ -1,3 +1,7 @@
+//Hero Section Styles
+
+
+//Mobile
 @include mobile{
   @include baseHeroStyle();
   #hero{
@@ -33,7 +37,7 @@
    
 }
 
-
+//MobileL
 @include mobileL{
   #header-group{
     // padding-top: 20% !important;
@@ -41,7 +45,7 @@
 
 }
 
-
+//Tablet
 @include tablet{
   #hero{
     background-position: 35% 50%, right;
@@ -61,14 +65,24 @@
 
       #start-btn{
         font-size: 1.4rem;
+        border: none;
+      }
+      #start-btn:hover{
+        color: $neutral-white;
+        background-color: rgba($color: $neutral-white, $alpha: 0.4);
+        border: none;
       }
       #learn-btn{
         font-size: 1.4rem;
       }
+      #learn-btn:hover{
+        color: $primary-light-red;
+        background-color: $neutral-white;
+      }
     }
   }
 }
-
+//Laptop
 @include laptop{
   #header-group{
     // padding-top: 9% !important; 
@@ -82,7 +96,7 @@
     padding-top: 4%;
   }
 }
-
+//Desktop
 @include desktop{
   
   #header-group{

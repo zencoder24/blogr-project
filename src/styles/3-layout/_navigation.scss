@@ -1,50 +1,138 @@
+//Navigation Styles
+
+
+
+
+
+
+
+
+
+
+
+//Mobile
 @include mobile{
   .navigation{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-
+  flex-direction: column;
+  align-items: flex-start;
     #brand-logo{
       height: 34px;
     }
 
-  .navigation-links{
-    display: none;
-  }
-
-    #toggle-icon{
+    #nav-modal-open{
+      position: absolute;
+      right: 0.75rem;
+      top: 6rem;
       height: 18px;
       width: 26px;
     }
+    .toggle-close{
+      display: none;
+      #nav-modal-close{
+        position: absolute;
+        right: 0.75rem;
+        top: 6rem;
+        height: 20px;
+        width: 23px;
+      }
+    }
+    
   }
 }
 
-//Do I need this???/
+//MobileL
 @include mobileL{
-  .navigation{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  
-      #brand-logo{
-        height: 34px;
-      }
-
-      .navigation-links{
-        display: none;
-      } 
-
-      #toggle-icon{
-        height: 22px;
-        width: 35px;
-      }
+    #toggle-button{
+      height: 22px;
+      width: 35px;
     }
-
 }
 
+
+//Moblie Styles Cleanup
+@include tablet{
+  toggle-button{
+    display: none !important; 
+  }
+  .navbar-shown{
+    display: block;
+  }
+  .menu_input{
+    display: none;
+  }
+  .menu_label{
+    display: none;
+  }
+
+  .nav-item{
+    display: block;
+  }
+}
+
+//Styles that will apply for Tablet, Laptop And Desktop
+@include tablet{
+  .product-link, .company-link, .connect-link{
+    position: relative;
+  }
+  
+  .product-link ul,
+  .company-link ul,
+  .connect-link ul{
+    position: absolute;
+    background-color: white;
+    margin-top: 10px;
+    width: 150px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-radius: 5px;
+    padding-left: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  }
+  
+  .product-link li a,
+  .company-link li a,
+  .connect-link li a{
+    color: black;
+    font-family: $primary-font;
+    font-size: 1.075rem;
+  }
+  
+  .product-link li a:hover,
+  .company-link li a:hover,
+  .connect-link li a:hover{
+    font-weight: weight(overpass-semi-bold);
+    text-decoration: none;
+  }
+  
+  .product-link button:focus img,
+  .company-link button:focus img,
+  .connect-link button:focus img{
+    transform:rotate(180deg);
+  }
+  
+  .product-link button:focus + ul,
+  .company-link button:focus + ul,
+  .connect-link button:focus + ul{
+    opacity: 1;
+    pointer-events: all;
+  }
+  }
+
+
+//Tablet
 @include tablet{
   @include baseNavStyle();
   .navigation{
+    flex-direction: row;
       #brand-logo{
         height: 32px;
       }
@@ -52,9 +140,12 @@
         .nav-left{
           gap: 24px;
           padding-left: 3%;
+          
 
-          a{
-            font-size: 1.2rem;
+          .nav-item{
+            a{
+              font-size: 1.2rem;
+            }
           }
         }
         .nav-right{
@@ -64,21 +155,36 @@
           }
           #signup-btn{
             font-size: 1.2rem;
+            border: none;
+          }
+          #signup-btn:hover{
+            color: $neutral-white;
+            background-color: rgba($color: white, $alpha: 0.4);
+            border: none;
           }
         }
       } 
     }
 }
 
+//Laptop
 @include laptop{
   .navigation{
     padding: 0 3%;
     #brand-logo{
       height: 3.4rem;
     }
+
+    .nav-left{
+      .nav-item{
+        a{
+          font-size: 1.3rem !important ;
+        }
+      }
+    }
   }
 }
-
+//Desktop
 @include desktop{
   
   .navigation{
@@ -90,8 +196,10 @@
    
     .navigation-links{
       .nav-left{
-        a{
-          font-size: 1.4rem;
+       .nav-item{
+            a{
+              font-size: 1.4rem !important;
+            }
         }
       }
 
